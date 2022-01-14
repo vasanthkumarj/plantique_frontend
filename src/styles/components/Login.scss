@@ -1,15 +1,71 @@
-.green-body{
-    background-color: $plush-green !important;
+.container
+{
+    display: flex;
+    justify-content: end;
 }
 
+.login
+{
+    text-align: center;
+}
 .login-card
 {
     margin: 50px;
-    width: 20em;
-    height: 20em;
+    width: 24em;
+    height: auto;
+    box-shadow: 1px 2px 3px 3px #ccc;
+    .p-card-content
+    {
+        margin-top: 0%;
+        padding: 0 0;
+        
+    }
 }
 
-.p-button.p-button-success
+.p-button.p-button-success  
 {
     margin: 10px !important;
+    background-color: $button-green;
+    width:270px;
+    height:50px;
+    text-align: center;
+}
+.input-box
+{
+    margin: 10px !important;
+}
+.logo
+{
+    color: $button-green;
+    display: flex;
+    justify-content: center;
+}
+
+.p-divider.p-divider-horizontal
+{
+    margin-bottom: 1.5 rem;
+    margin-top:0%;
+    padding: 0 1.25rem;
+    font-size: larger;
+}
+
+.p-inputtext.p-component
+{
+    width:270px;
+    height:50px;
+    &:focus
+    {
+        background-color: #C9EED2 !important;
+        border-color: $button-green !important;
+    }
+    &:hover
+    {
+        border-color: $button-green !important;
+    }
+    box-shadow: none !important;
+}
+
+.p-button-icon
+{
+    padding-right: 7px;
 }
