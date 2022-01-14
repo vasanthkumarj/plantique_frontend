@@ -1,8 +1,15 @@
 .green-body{
     background-color: $plush-green !important;
+}
 
-    .btn
-    {
-        background-color: red;
-    }
+.login-card
+{
+    margin: 50px;
+    width: 20em;
+    height: 20em;
+}
+
+.p-button.p-button-success
+{
+    margin: 10px !important;
 }
