@@ -5,7 +5,7 @@ import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { Divider } from 'primereact/divider';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-
+import tree from "../../assets/images/tree2.gif";
 
 const Login = () => {
 
@@ -22,6 +22,7 @@ const Login = () => {
 
   return (
     <div className="container">
+      <img src={tree} style={{height:"600px", width:"400px"}} />
         <Card className="login-card">
           <span className="logo"><i class="fab fa-canadian-maple-leaf fa-4x"></i></span>
           <Divider align="center">
