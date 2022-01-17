@@ -1,28 +1,41 @@
 import React, { useState } from "react";
-import { login } from "../../services/services";
+import { HomePageService } from "./../../services";
 import { Card } from 'primereact/card';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { Divider } from 'primereact/divider';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import tree from "../../assets/images/tree2.gif";
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Login = () => {
 
+  Notify.init({
+    position: "center-top",
+    clickToClose: true,
+    pauseOnHover: true
+  })
+
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const onSubmit = () => {
-    let response = login(username, password)
-    if (response == "Failure")
-      Notify.failure('Sol lucet omnibus');
+  const onSubmit = async() => {
+    let response = await HomePageService.login({"username":username, "password":password})
+    console.log(response["data"])
+    if (response['data'] == "Failure")
+      Notify.failure('Login unsuccessful');
     else
-      Notify.success('Sol lucet omnibus');
+    {
+      Notify.success('Login successful');
+      navigate("/home")
+    }
+      
   }
 
   return (
     <div className="container">
-      <img src={tree} style={{height:"600px", width:"400px"}} />
         <Card className="login-card">
           <span className="logo"><i class="fab fa-canadian-maple-leaf fa-4x"></i></span>
           <Divider align="center">
